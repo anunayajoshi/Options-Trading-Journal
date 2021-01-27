@@ -1,0 +1,71 @@
+Creating the checkbox was okay. Wanted to use a checkbox at first, 
+but couldn't figure out how to make only one checkbox ticked at a time. 
+Ended up using radio buttons in the end. Read up on material UI styling properties. 
+
+2. Creating Input Fields was straight forward. Making it such that it will only render when ticked was a challenge. 
+
+at first, I used a singular state variable for all 3 types, handled by the handlechange() function, 
+which would setstate(e => e.target.value), hoping to get the value attribute when the 
+checkbox is clicked, but when i tried that, it wouldn't work or output anything. 
+
+googled a lot, and many sites were using class based components, so it was hard to follow along,
+when they were using this.setstate syntax. i learnt about it 2 years ago but have forgotten
+a lot about it. 
+
+
+found a reddit thread that suggested to split all 3 into different states , using the switch case
+to handlechange, so tried that. 
+
+at first, each case would do
+
+case 'stock':
+            
+            setstockState({ checked: !checked),
+
+but i then faced problems where double clicking the radio button would break the program. 
+i then added on the other states to just set it as false when a specific checkbox is checked. 
+then it started working. Ternary operators worked perfectly as intended. 
+
+spent way too much time trying to figure out material ui grid. will look into another time. 
+
+ended up figuring it out after taking a break lol. just gave their material UI documentation example another shot and managed to work by
+ testing out the redundancies and commenting out different parts to see the impact
+
+ learnt more about material UI gridbox. usually i would just ignore styling but cool to see it work now. 
+ 
+
+ 
+    24/1 
+
+    done until step 3. now need to do the handlesubmit stuff. i was looking into optimizing my code for call/stock/ and vertical, so taht i dont repeat the fields so many times, but i guess i'll
+    look into that after i've completed all the functionality. might have to put the text field in its own component and then just call it. 
+
+    i know that i can make state for userdata. yeah let's just try that first. 
+
+    i also think i should move all the states over to app.js since i read above the top to bottom approach, and not passing the state up if not needed. but yeah ill reformat everything after the functioanlity is good. 
+
+    
+    ok struggled quite hard with getting the state to work. read about redux but guess it's not required for a small scale app. I'm able to pass the props from parent to child component, but then i can only get it to work for 1 text field. 
+
+
+25/1
+
+    ok didnt give up and use context. managed to get it to work. and also put the textfield into its own component so that i can reuse it instead of just copy pasting every time. 
+
+    dope, managed to output onto the list. learnt more about lifting state up , and passing data to sibling components. 
+
+    next problem is to get the map function to work, because it doesn't create another row. i can use the spread operator to save the pass data, but then the state is in the parent component. 
+
+    fking got it done. inputs in the past data as well. turns out didn't need to get the state. just used prevData and ... , worked perfectly. also managed to clear the input field once submit button is clicked. 
+
+    
+
+    ok facing couple of problems. 
+
+    1. 1 character delay in onchange event.  , fixed but not right way to do it. 
+
+    2. radio button remains checked despite state being false after clicking submit button. 
+
+    3. cant get calculator to work.  fixed but cant put into separate component. 
+
+    solved the functionality problems above, all works fine but probably not the right/best way to do it. 

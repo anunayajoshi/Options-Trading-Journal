@@ -1,0 +1,58 @@
+22/1
+
+App main component. 
+
+Form component 
+    First asks for type of option play. Dropdown maybe? 
+    Options - Stock/Call/Put/Vertical Spread/Iron Condor 
+
+    When specific option is chosen, different components are rendered below it. 
+    Maybe using switch:case to render, or if checkbox ticked && <Component>
+
+    Component renders.
+
+    Stock - Date, Ticker, Entry Price, Quantity, Close Date, Closing Price. 
+    Auto calculates total entry cost + P/L and percentage. perhaps this calculation is another component that lives inside each type's.
+    Yeah i can reuse that calculation method for the different types of plays. 
+
+    Once submitted button is clicked (another component?), enters into the list 
+
+    List Component, showing the details. 
+    Date, Ticker, Type, Strike, Expiry, Entry Price, Quantity, Cost, Days to Expiration, Closing Date, Closing Price, Closing Amt, P/L, P/L%. 
+
+    For stocks, strike,expiry and DTE will be nil/empty. default setstate will be empty so shd be ok to leave it as such?  
+
+    Maybe include in a notes function as well, just a text field. 
+
+
+    ok general idea done. to prioritise what is to be done. 
+
+
+    1. Form Filling component 
+    - contains checkbox of different plays possible, will only do stocks, calls and puts for now.  DONE. 
+    
+    2. Component for different strategies. Child of Form Filling Component. 
+        - Create input fields 
+        - Such that will render when checkbox ticked, and will dissapear when unticked. 
+        - Passing data of checkbox state from parent component to child component. , turns out dont need pass. kept state within filerform.js
+
+    3. Create List component
+        - Tables and Rows for the respective fields.
+        Date, Ticker, Type, Strike, Expiry, Entry Price, Quantity, Cost, Closing Date, Closing Price, Closing Amt, P/L, P/L%.
+        - Wont deal with the calculations yet. 
+
+    4. Work out state for submit button and List component. 
+        - Not 100% on this.
+        - using onchange, handlesubmit, and e.target.value for each input field. should be a easier way to do this?
+        - when submit clicked, send values from form filling component to list component. 
+
+    5. work out calculations component. 
+    - once submit button clicked, sends over to Calculation component first, which then sends to List??
+    - id say this one is just bonus
+
+    6. CRUD maybe? 
+
+    7. UI design, material UI table. 
+
+
+
