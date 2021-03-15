@@ -41,6 +41,8 @@ const FilterForm = ({setFinalData}) => {
         data['Type'] = type()
     }
 
+
+    
     // Upon button clicked, sends data to finaldata state, and restarts the form.
     const handleSubmit = (e) => {
         e.preventDefault();
